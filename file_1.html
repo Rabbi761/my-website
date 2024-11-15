@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ জন্মদিন</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400&display=swap');
+
+        /* Background and Body Styling */
+        body {
+            font-family: 'Noto Serif Bengali', sans-serif;
+            background: linear-gradient(to top right, #4a148c, #880e4f);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Sparkles (Stars) */
+        .sparkle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Floating Balloons */
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6f61, #ff4081);
+            border-radius: 50%;
+            animation: float 5s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 100, 100, 0.3);
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 4px;
+            height: 20px;
+            background-color: #ff4081;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-10vh); }
+        }
+
+        /* Moon Element */
+        .moon {
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #f9e0ae, #f7c45b);
+            border-radius: 50%;
+            box-shadow: 0 0 30px 20px rgba(255, 255, 200, 0.4);
+        }
+
+        /* Main Content Container */
+        .container {
+            text-align: center;
+            padding: 30px;
+            width: 80%;
+            max-width: 500px;
+            height: 70%; /* Fixed height for enabling scroll */
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-out;
+            overflow-y: auto; /* Allow vertical scrolling */
+            z-index: 10;
+        }
+
+        /* Updated Scrollbar Styling */
+        .container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: rgba(248, 200, 220, 0.8); /* Softer background */
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #ff7aa2, #f87a98);
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(255, 99, 132, 0.5);
+        }
+
+        .container::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #ff69b4, #ff4081); /* Brighter on hover */
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        #message {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .poem-line {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
+            transform: translateY(20px);
+            color: #555;
+            font-weight: 400;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #ff7aa2, #ff69b4);
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin-top: 20px;
+            box-shadow: 0px 4px 10px rgba(255, 105, 180, 0.3);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="moon"></div>
+
+<div class="container">
+    <h1>🎉 শুভ জন্মদিন! 🎉</h1>
+    <p id="message">শুভকামনা রইলো সবসময়! 🥳</p>
+    <button class="button" onclick="revealPoem()">কবিতা পড়ুন</button>
+    
+    <div id="poem" style="display: none;">
+        <p class="poem-line">জন্মদিনের শুভেচ্ছা নিও </p>
+<p class="poem-line">নিও বুক ভরা ভালবাসা, </p>
+<p class="poem-line">খোদা তোমার সহায় হোক </p>
+<p class="poem-line">পূরণ হোক তব মনের আশা। </p>
+<p class="poem-line">,,</p>
+<p class="poem-line">সদা হাসিমুখ থাকুক তোমার </p>
+<p class="poem-line">সদা সুস্থ থেকো, </p>
+<p class="poem-line">জীবন যুদ্ধে সফল হয়ে </p>
+<p class="poem-line">ইতিহাসে নাম রেখো। </p>
+<p class="poem-line">,,</p>
+<p class="poem-line">সৎকর্মে শোধ করিও </p>
+<p class="poem-line">পৃথিবীর যত ঋণ, </p>
+<p class="poem-line">স্মরণীয় দিনে তোমায় জানাই </p>
+<p class="poem-line">শুভ জন্মদিন।🥳</p>
+
+<p class="poem-line">||</p>
+<p class="poem-line">লেখকঃ- মোঃ রাব্বি হাসান 😉</p>
+    </div>
+    <button onclick="window.location.href='index.html';" class="button">ফিরে যান</button>
+</div>
+
+<script>
+    function revealPoem() {
+        document.getElementById('message').style.display = 'none';
+        document.getElementById('poem').style.display = 'block';
+        const lines = document.querySelectorAll('.poem-line');
+        lines.forEach((line, index) => {
+            setTimeout(() => {
+                line.style.opacity = 1;
+                line.style.transform = 'translateY(0)';
+            }, index * 1000);
+        });
+    }
+
+    // Create sparkles
+    function createSparkles() {
+        for (let i = 0; i < 100; i++) {
+            let sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            document.body.appendChild(sparkle);
+
+            let size = Math.random() * 3 + 1;
+            sparkle.style.width = `${size}px`;
+            sparkle.style.height = `${size}px`;
+            sparkle.style.left = `${Math.random() * 100}vw`;
+            sparkle.style.top = `${Math.random() * 100}vh`;
+            sparkle.style.animationDuration = `${2 + Math.random() * 3}s`;
+            sparkle.style.opacity = `${0.4 + Math.random() * 0.6}`;
+        }
+    }
+
+    // Create balloons
+    function createBalloons() {
+        for (let i = 0; i < 20; i++) {
+            let balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            document.body.appendChild(balloon);
+
+            balloon.style.left = `${Math.random() * 100}vw`;
+            balloon.style.animationDuration = `${5 + Math.random() * 5}s`;
+            balloon.style.animationDelay = `${Math.random() * 5}s`;
+            balloon.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
+        }
+    }
+
+    function getRandomColor() {
+        const colors = ['#ff4081', '#ff6f61', '#ff7aa2', '#ff9e80', '#ff4081'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    createSparkles();
+    createBalloons();
+</script>
+</body>
+</html>

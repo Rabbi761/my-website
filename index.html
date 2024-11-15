@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400&display=swap');
+
+        /* Overall body and background */
+        body {
+            font-family: 'Noto Serif Bengali', sans-serif;
+            background: linear-gradient(to bottom, #1a237e, #0d47a1, #283593);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Background stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkling 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkling {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Main container for content */
+        .container {
+            width: 90%;
+            max-width: 400px;
+            height: 80vh;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Scrollbar styling */
+        .container::-webkit-scrollbar {
+            width: 10px;
+        }
+        .container::-webkit-scrollbar-thumb {
+            background-color: #ff6f61;
+            border-radius: 5px;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2em;
+            background-color: #ff6f61;
+            padding: 10px;
+            border-radius: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(255, 99, 132, 0.4);
+        }
+
+        /* Button grid styling */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Individual button styling */
+        .button {
+            background: linear-gradient(135deg, #ff7aa2, #ff4081);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 15px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 99, 132, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 99, 132, 0.5);
+        }
+
+        /* Additional animations */
+        @keyframes balloon-float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-10vh); }
+        }
+
+        /* Moon styling */
+        .moon {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #fff, #e0e0e0);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Balloon styling */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 20px;
+            height: 30px;
+            background: linear-gradient(135deg, #ff7aa2, #ff4081);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: balloon-float 10s infinite ease-in-out;
+        }
+
+        /* Different balloon colors */
+        .balloon:nth-child(2) { background: linear-gradient(135deg, #ffa07a, #ff6347); }
+        .balloon:nth-child(3) { background: linear-gradient(135deg, #98fb98, #32cd32); }
+        .balloon:nth-child(4) { background: linear-gradient(135deg, #87cefa, #4682b4); }
+
+        /* Random balloon positions */
+        .balloon:nth-child(1) { left: 20%; animation-duration: 12s; }
+        .balloon:nth-child(2) { left: 40%; animation-duration: 10s; }
+        .balloon:nth-child(3) { left: 60%; animation-duration: 14s; }
+        .balloon:nth-child(4) { left: 80%; animation-duration: 11s; }
+    </style>
+</head>
+<body>
+
+    <!-- Moon and balloons for birthday effect -->
+    <div class="moon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Main container -->
+    <div class="container">
+        <h1>উপহার</h1>
+        
+        <div class="button-container">
+            <!-- Placeholder buttons for the scrollable content -->
+            <button onclick="window.location.href='file_1.html';" class="button">শুভ জন্মদিন</button>
+            <button onclick="window.location.href='file_2.html';" class="button">হে অপরিচিতা </button>
+            <button onclick="window.location.href='file_3.html';" class="button">তাহার পরিচয় </button>
+            <button onclick="window.location.href='file_4.html';" class="button">খুঁজে নিও </button>
+            <button onclick="window.location.href='file_5.html';" class="button">অজানা আবেগ</button>
+            <button onclick="window.location.href='file_6.html';" class="button">মনের মাঝে তুমি </button>
+            <button onclick="window.location.href='file_7.html';" class="button">আমি শুধু তোমার</button>
+            <button onclick="window.location.href='file_8.html';" class="button">প্রিয় চিত্র</button>
+            <button onclick="window.location.href='file_9.html';" class="button">ভালোবাসা</button>
+            <button onclick="window.location.href='file_10.html';" class="button">সেই দুচোখ</button>
+            <button onclick="window.location.href='file_11.html';" class="button">মন খোঁজে তারে </button>
+            <button onclick="window.location.href='file_12.html';" class="button">অনুভবে শুধু তুমি  </button>
+            <button onclick="window.location.href='file_13.html';" class="button">সে তো এমন-ই </button>
+            <button onclick="window.location.href='file_14.html';" class="button">হৃদয় জুড়ে তুমি </button>
+            <button onclick="window.location.href='file_15.html';" class="button">শুধু তুমি </button>
+            <button onclick="window.location.href='file_15_5.html';" class="button">ইচ্ছে </button>
+            <button onclick="window.location.href='file_16.html';" class="button">তোমার আশায় থাকব</button>
+            <button onclick="window.location.href='file_17.html';" class="button">তুমি হৃদয় জুড়ে রবে </button>
+            <button onclick="window.location.href='file_18.html';" class="button">ক্ষীণ বসন্ত </button>
+            <button onclick="window.location.href='file_19.html';" class="button">যদি আমায় আপন করো </button>
+    </div>
+
+    <script>
+        // Function to create background stars
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement('div');
+                star.classList.add('star');
+                document.body.appendChild(star);
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDuration = 2 + Math.random() * 3 + 's';
+            }
+        }
+
+        createStars();
+    </script>
+
+</body>
+</html>
